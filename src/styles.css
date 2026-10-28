@@ -19,6 +19,7 @@
 body {
   min-width: 320px;
   min-height: 100vh;
+  min-height: 100svh;
   margin: 0;
 }
 
@@ -29,8 +30,9 @@ button {
 .app {
   display: grid;
   min-height: 100vh;
+  min-height: 100svh;
   place-items: center;
-  overflow: hidden;
+  overflow-x: hidden;
   isolation: isolate;
 }
 
@@ -87,8 +89,13 @@ button {
   display: grid;
   width: 100%;
   min-height: 100vh;
+  min-height: 100svh;
   place-items: center;
-  padding: 32px 22px;
+  padding:
+    max(32px, env(safe-area-inset-top))
+    max(22px, env(safe-area-inset-right))
+    max(32px, env(safe-area-inset-bottom))
+    max(22px, env(safe-area-inset-left));
 }
 
 .scene {
@@ -137,7 +144,7 @@ button {
   width: auto;
   height: auto;
   max-width: min(78vw, 500px);
-  max-height: 42vh;
+  max-height: min(42vh, 42svh);
   object-fit: contain;
 }
 
@@ -276,15 +283,101 @@ h1 {
 }
 
 @media (max-width: 480px) {
+  .surprise {
+    padding:
+      max(24px, env(safe-area-inset-top))
+      max(16px, env(safe-area-inset-right))
+      max(24px, env(safe-area-inset-bottom))
+      max(16px, env(safe-area-inset-left));
+  }
+
+  .scene {
+    width: 100%;
+  }
+
   .slide-art {
-    width: 140px;
-    height: 140px;
-    margin-bottom: 25px;
-    font-size: 4rem;
+    width: clamp(112px, 36vw, 140px);
+    height: clamp(112px, 36vw, 140px);
+    margin-bottom: 22px;
+    font-size: clamp(3.2rem, 16vw, 4rem);
+  }
+
+  .picture-frame {
+    max-width: 100%;
+    margin-bottom: 22px;
+    padding: 5px;
+    border-width: 6px;
+    border-radius: 17px;
+  }
+
+  .picture-frame img {
+    max-width: calc(100vw - 58px);
+    max-height: min(38vh, 38svh);
+  }
+
+  h1 {
+    font-size: clamp(1.9rem, 8vw, 2.5rem);
+  }
+
+  .finale h1 {
+    font-size: clamp(2.15rem, 9.5vw, 3rem);
+  }
+
+  .eyebrow {
+    font-size: 0.68rem;
+    letter-spacing: 0.16em;
+  }
+
+  .slide-message,
+  .final-message {
+    margin-top: 14px;
+    font-size: 0.98rem;
+    line-height: 1.65;
   }
 
   .progress {
-    margin-top: 32px;
+    gap: 6px;
+    margin-top: 26px;
+  }
+
+  .progress span.active {
+    width: 18px;
+  }
+
+  .finale-art {
+    gap: 8px;
+    margin-bottom: 24px;
+    font-size: clamp(2.8rem, 15vw, 4rem);
+  }
+
+  .final-stars {
+    margin-top: 20px;
+  }
+}
+
+@media (max-height: 560px) and (max-width: 900px) {
+  .surprise {
+    place-items: start center;
+  }
+
+  .picture-frame img {
+    max-height: 32vh;
+    max-height: 32svh;
+  }
+
+  .slide-art {
+    width: 100px;
+    height: 100px;
+    margin-bottom: 16px;
+    font-size: 3rem;
+  }
+
+  .finale-art {
+    margin-bottom: 16px;
+  }
+
+  .progress {
+    margin-top: 18px;
   }
 }
 
