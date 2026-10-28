@@ -3,7 +3,7 @@
 :root {
   font-family: "DM Sans", sans-serif;
   color: #493d42;
-  background: #fffaf5;
+  background: #fff4f6;
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
@@ -37,7 +37,7 @@ button {
 }
 
 .is-intro {
-  background: #fffaf5;
+  background: #fff4f6;
 }
 
 .start-button {
@@ -79,9 +79,9 @@ button {
 .is-playing {
   position: relative;
   background:
-    radial-gradient(ellipse at 12% 18%, #f9e9dc 0, transparent 33%),
-    radial-gradient(ellipse at 86% 82%, #f3e5ee 0, transparent 35%),
-    #fffaf5;
+    radial-gradient(ellipse at 12% 18%, #ffe6eb 0, transparent 35%),
+    radial-gradient(ellipse at 86% 82%, #f8e6f0 0, transparent 38%),
+    #fff4f6;
 }
 
 .surprise {
@@ -125,6 +125,73 @@ button {
 
 .cake .slide-art {
   background: #fff1e9;
+}
+
+.flowers .slide-art {
+  background: #fff0f4;
+}
+
+.lily-illustration {
+  width: 112px;
+  height: 112px;
+  overflow: visible;
+}
+
+.lily-stem {
+  fill: none;
+  stroke: #779b70;
+  stroke-width: 4;
+  stroke-linecap: round;
+}
+
+.lily-leaf {
+  fill: #9cbd8b;
+  stroke: #779b70;
+  stroke-width: 1.5;
+  stroke-linejoin: round;
+}
+
+.lily-petal {
+  fill: #fff8f4;
+  stroke: #fff;
+  stroke-width: 4;
+  stroke-linejoin: round;
+}
+
+.lily-petal-stripe {
+  fill: #ed6f9a;
+  stroke: #e85f8b;
+  stroke-width: 0.8;
+  stroke-linejoin: round;
+}
+
+.lily-throat {
+  fill: #f5d99a;
+  stroke: #eab96d;
+  stroke-width: 0.8;
+}
+
+.lily-vein {
+  fill: none;
+  stroke: #f3abc0;
+  stroke-width: 1;
+  stroke-linecap: round;
+  opacity: 0.85;
+}
+
+.lily-freckles {
+  fill: #9d3159;
+}
+
+.lily-stamen {
+  fill: none;
+  stroke: #b98542;
+  stroke-width: 1.8;
+  stroke-linecap: round;
+}
+
+.lily-anther {
+  fill: #bd7136;
 }
 
 .picture-frame {
@@ -175,6 +242,26 @@ h1 {
   font-size: clamp(0.98rem, 2.5vw, 1.12rem);
   line-height: 1.8;
   text-wrap: balance;
+}
+
+.final-note {
+  max-width: 500px;
+  margin: 14px auto 0;
+  color: #806b70;
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: clamp(1rem, 2.4vw, 1.15rem);
+  line-height: 1.7;
+  text-wrap: balance;
+}
+
+.final-note + .final-note {
+  margin-top: 5px;
+}
+
+.final-note:last-of-type {
+  color: #b65f70;
+  font-style: italic;
+  font-weight: 600;
 }
 
 .progress {
@@ -333,6 +420,17 @@ h1 {
     margin-top: 14px;
     font-size: 0.98rem;
     line-height: 1.65;
+  }
+
+  .final-note {
+    max-width: 32ch;
+    margin-top: 12px;
+    font-size: 0.98rem;
+    line-height: 1.55;
+  }
+
+  .final-note + .final-note {
+    margin-top: 4px;
   }
 
   .progress {
